@@ -1,0 +1,206 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  h1 {
+    font-size: 32px;
+    text-align: center;
+    margin: 16px 0;
+  }
+  
+  nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 3px;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 0 25px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 8px 0;
+  }
+
+  .image-container {
+    display: flex;
+    flex-direction: column; /* stack elements vertically */
+  }
+
+  .clear {
+    clear: both; /* clear float */
+  }
+
+  .image-container img {
+    width: 50%;
+    display: block;
+    margin: auto;
+  }
+
+  .nav-wrapper {
+    width: 30%;
+    margin: 0 auto; /* navbar will be horizontally centered */
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+  }
+
+  .testimonial {
+    font-style: italic;
+    margin-bottom: 20px;
+    max-width: 40%;
+  }
+  
+  .testimonial-author {
+    font-weight: bold;
+  }
+
+  .testimonial-2 {
+    font-style: italic;
+    margin-bottom: 20px;
+    max-width: 40%;
+    float: right;
+  }
+
+  .image-customer {
+    position: absolute;
+    bottom: -320pt;
+    right: 270pt;
+  }
+
+  .image-customer-2 {
+    position: absolute;
+    max-width: 100%;
+  }
+
+  .night-mode {
+    background-color: black;
+    color: white;
+  }
+
+  button#night-mode-toggle {
+    position: absolute;
+    top: 50px;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 3px 3px;
+    cursor: pointer;
+  }
+
+  #contact-form {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    float: left;
+  
+  }
+
+  #text-1 {
+    display: flex; /* Make the element a flex container */
+    justify-content: left; /* Center the element horizontally */
+    display: grid;
+  }
+
+  #map {
+    float: right; /* This will align the map to the right */
+    width: 45%; /* This sets the width of the map to 50% of its container */
+    display: flex;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+
+  form {
+    width: 250px;
+    margin: 0 auto;
+    text-align: left;
+    float: middle;
+  }
+  label {
+    display: block;
+    margin-top: 20px;
+  }
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  input[type="submit"] {
+    width: auto;
+    background-color: #333;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: rgb(27, 27, 27);
+  }
+
+  #my-iframe {
+    position: absolute;
+    float: left;
+    bottom: -50;
+    display: flex;
+    padding-top: 1%;
+  }

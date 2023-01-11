@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gloves For You INC</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div style="text-align:center;">
+    <a href="index.html">
+      <img src="Assets/weblogo.jpg" width="75" height="75">
+    </a>
+  </div>
+  <h1>Gloves Inc.</a></h1>
+  <div class="nav-wrapper">
+    <nav>
+      <ul>
+        <li><a href="product-1.html">Motorcycle Gloves</a></li>
+        <li><a href="product-2.html">Cycling Gloves</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <main>
+    <button id="night-mode-toggle">
+        <img src="Assets/moon.png" width="30" height="30">
+    </button>
+
+    <script>
+      // JavaScript function to toggle night mode
+      function toggleNightMode() {
+        document.body.classList.toggle('night-mode');
+    
+        // Check if night mode is enabled
+        if (document.body.classList.contains('night-mode')) {
+          // If night mode is enabled, store 'enabled' in local storage
+          localStorage.setItem('nightMode', 'enabled');
+        } else {
+          // If night mode is disabled, store 'disabled' in local storage
+          localStorage.setItem('nightMode', 'disabled');
+        }
+      }
+    
+      // Add event listener to toggle button
+      document.getElementById('night-mode-toggle').addEventListener('click', toggleNightMode);
+    
+      // Check the value of 'nightMode' in local storage when the page loads
+      if (localStorage.getItem('nightMode') === 'enabled') {
+        // If 'nightMode' is 'enabled', apply the night mode styles to the page
+        document.body.classList.add('night-mode');
+      }
+    </script>
+    
+    <!-- CSS styles for night mode -->
+    <style>
+      .night-mode {
+        background-color: black;
+        color: white;
+      }
+    </style>
+
+<img src="Assets/thumbnail2.jpg" id="myImage">
+
+<script>
+  // Get a reference to the image element
+  var image = document.getElementById("myImage");
+
+  // Set a flag to track the current state of the image
+  var isLarger = true;
+
+  // Attach a click event handler to the image
+  image.addEventListener("click", function() {
+    // If the image is not currently larger, make it larger
+    if (!isLarger) {
+      image.style.width = "500px";
+      image.style.height = "500px";
+      isLarger = true;
+    } 
+    // If the image is currently larger, make it smaller
+    else {
+      image.style.width = "250px";
+      image.style.height = "250px";
+      isLarger = false;
+    }
+  });
+</script>
+
+<button onclick="increaseSize()">+</button>
+    <button onclick="decreaseSize()">-</button>
+
+    <script>
+      function increaseSize() {
+        var elements = document.getElementsByTagName("*");
+        for (var i = 0; i < elements.length; i++) {
+          var currentSize = window.getComputedStyle(elements[i], null).getPropertyValue("font-size");
+          var currentSizeInt = parseInt(currentSize);
+          elements[i].style.fontSize = (currentSizeInt + 2) + "px";
+        }
+        localStorage.setItem("fontSize", elements[0].style.fontSize);
+      }
+
+      function decreaseSize() {
+        var elements = document.getElementsByTagName("*");
+        for (var i = 0; i < elements.length; i++) {
+          var currentSize = window.getComputedStyle(elements[i], null).getPropertyValue("font-size");
+          var currentSizeInt = parseInt(currentSize);
+          elements[i].style.fontSize = (currentSizeInt - 2) + "px";
+        }
+        localStorage.setItem("fontSize", elements[0].style.fontSize);
+      }
+
+      window.onload = function() {
+        var storedSize = localStorage.getItem("fontSize");
+        if (storedSize) {
+          var elements = document.getElementsByTagName("*");
+          for (var i = 0; i < elements.length; i++) {
+            elements[i].style.fontSize = storedSize;
+          }
+        }
+      }
+    </script>
+
+<p>Winter Cycling 09126</p>
+<p>Product Description: </p>
+<p>Winter gloves are important for cycling because they help keep your hands warm and comfortable while riding in cold weather. When it's cold outside, your hands are exposed to the elements and can get very chilly, which can make it difficult to grip the handlebars and shift gears effectively. Wearing winter gloves can help to insulate your hands and keep them warm, so you can continue to ride comfortably and safely. Additionally, winter gloves can also help protect your hands from wind and moisture, which can further contribute to the chill factor. By wearing winter gloves, you can extend your cycling season and enjoy your rides all year round.</p>
+<label for="size">Size:</label>
+<select id="size">
+  <option value="small">Small</option>
+  <option value="medium">Medium</option>
+  <option value="large">Large</option>
+  <option value="large">XL</option>
+</select>
+<br>
+<button type="button">Buy Now</button>
+
+<iframe id="my-iframe" width="560" height="315" src="https://www.youtube.com/embed/0M23ivV9c3U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+
+
+  </main>
+
+  <div class="footer">
+  <p>Copyright 2022 Joe Harris, JoePeter11@icloud.com</p>
+</div>
+
+</body>
+</html>

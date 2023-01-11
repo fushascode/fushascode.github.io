@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gloves For You INC</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div style="text-align:center;">
+    <a href="index.html">
+      <img src="Assets/weblogo.jpg" width="75" height="75">
+    </a>
+  </div>
+  <h1>Gloves Inc.</a></h1>
+  <div class="nav-wrapper">
+    <nav>
+      <ul>
+        <li><a href="product-1.html">Motorcycle Gloves</a></li>
+        <li><a href="product-2.html">Cycling Gloves</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <main>
+    <button id="night-mode-toggle">
+        <img src="Assets/moon.png" width="23" height="23">
+      </button>
+      
+      <script>
+        // JavaScript function to toggle night mode
+        function toggleNightMode() {
+          document.body.classList.toggle('night-mode');
+      
+          // Check if night mode is enabled
+          if (document.body.classList.contains('night-mode')) {
+            // If night mode is enabled, store 'enabled' in local storage
+            localStorage.setItem('nightMode', 'enabled');
+          } else {
+            // If night mode is disabled, store 'disabled' in local storage
+            localStorage.setItem('nightMode', 'disabled');
+          }
+        }
+      
+        // Add event listener to toggle button
+        document.getElementById('night-mode-toggle').addEventListener('click', toggleNightMode);
+      
+        // Check the value of 'nightMode' in local storage when the page loads
+        if (localStorage.getItem('nightMode') === 'enabled') {
+          // If 'nightMode' is 'enabled', apply the night mode styles to the page
+          document.body.classList.add('night-mode');
+        }
+      </script>
+      
+      <!-- CSS styles for night mode -->
+      <style>
+        .night-mode {
+          background-color: black;
+          color: white;
+        }
+      </style>
+
+      <button onclick="increaseSize()">+</button>
+    <button onclick="decreaseSize()">-</button>
+
+    <script>
+      function increaseSize() {
+        var elements = document.getElementsByTagName("*");
+        for (var i = 0; i < elements.length; i++) {
+          var currentSize = window.getComputedStyle(elements[i], null).getPropertyValue("font-size");
+          var currentSizeInt = parseInt(currentSize);
+          elements[i].style.fontSize = (currentSizeInt + 2) + "px";
+        }
+        localStorage.setItem("fontSize", elements[0].style.fontSize);
+      }
+
+      function decreaseSize() {
+        var elements = document.getElementsByTagName("*");
+        for (var i = 0; i < elements.length; i++) {
+          var currentSize = window.getComputedStyle(elements[i], null).getPropertyValue("font-size");
+          var currentSizeInt = parseInt(currentSize);
+          elements[i].style.fontSize = (currentSizeInt - 2) + "px";
+        }
+        localStorage.setItem("fontSize", elements[0].style.fontSize);
+      }
+
+      window.onload = function() {
+        var storedSize = localStorage.getItem("fontSize");
+        if (storedSize) {
+          var elements = document.getElementsByTagName("*");
+          for (var i = 0; i < elements.length; i++) {
+            elements[i].style.fontSize = storedSize;
+          }
+        }
+      }
+    </script>
+
+      <p>At Gloves Inc, we value our customers above all else. We understand that without our loyal customers, our business would not be where it is today. That's why we always strive to provide the best possible service and support. If you have any questions, comments, or concerns, we encourage you to reach out to us using the provided form on our website. We take all feedback seriously and are always looking for ways to improve the customer experience. So don't hesitate to get in touch – we're here to help!</p>
+      <div id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2406.030139438357!2d-1.1840813229337595!3d52.911884907141605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879c26270e2dcd9%3A0x18e0760782152e51!2sNTU%20Clifton%20Campus%20Main%20Entrance%20(North%20Gate)!5e0!3m2!1sen!2suk!4v1671635364358!5m2!1sen!2suk" width="600" height="450" frameborder="0" style="border:0"></iframe>
+      </div>
+
+
+
+      <form id="contact-form" method="post" action="/submit-form">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required oninput="validateEmail()"><br>
+  <div id="email-error" style="display:none; color:red;">Please enter a valid email address</div>
+
+  <label for="subject">Subject:</label><br>
+  <input type="text" id="subject" name="subject" required><br>
+
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message" rows="5" required></textarea><br>
+
+  <button type="submit">Send</button>
+</form>
+
+<script>
+  function validateEmail() {
+    var email = document.getElementById("email").value;
+    var emailError = document.getElementById("email-error");
+    var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+    if (regex.test(email)) {
+      // Email is valid, hide error message
+      emailError.style.display = "none";
+    } else {
+      // Email is invalid, show error message
+      emailError.style.display = "block";
+    }
+  }
+</script>
+
+
+  </main>
+
+  <div class="footer">
+  <p>Copyright 2022 Joe Harris, JoePeter11@icloud.com</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gloves For You INC</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div style="text-align:center;">
+    <img src="Assets/weblogo.jpg" width="75" height="75">
+  </div>
+  <h1>Gloves Inc.</h1>
+  <div class="nav-wrapper">
+    <nav>
+      <ul>
+        <li><a href="product-1.html">Motorcycle Gloves</a></li>
+        <li><a href="product-2.html">Cycling Gloves</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <main>
+    <button id="night-mode-toggle">
+      <img src="Assets/moon.png" width="23" height="23">
+    </button>
+
+    <button onclick="increaseSize()">+</button>
+    <button onclick="decreaseSize()">-</button>
+
+    <script>
+      function increaseSize() {
+        var elements = document.getElementsByTagName("*");
+        for (var i = 0; i < elements.length; i++) {
+          var currentSize = window.getComputedStyle(elements[i], null).getPropertyValue("font-size");
+          var currentSizeInt = parseInt(currentSize);
+          elements[i].style.fontSize = (currentSizeInt + 2) + "px";
+        }
+        localStorage.setItem("fontSize", elements[0].style.fontSize);
+      }
+
+      function decreaseSize() {
+        var elements = document.getElementsByTagName("*");
+        for (var i = 0; i < elements.length; i++) {
+          var currentSize = window.getComputedStyle(elements[i], null).getPropertyValue("font-size");
+          var currentSizeInt = parseInt(currentSize);
+          elements[i].style.fontSize = (currentSizeInt - 2) + "px";
+        }
+        localStorage.setItem("fontSize", elements[0].style.fontSize);
+      }
+
+      window.onload = function() {
+        var storedSize = localStorage.getItem("fontSize");
+        if (storedSize) {
+          var elements = document.getElementsByTagName("*");
+          for (var i = 0; i < elements.length; i++) {
+            elements[i].style.fontSize = storedSize;
+          }
+        }
+      }
+    </script>
+    
+    <script>
+      // JavaScript function to toggle night mode
+      function toggleNightMode() {
+        document.body.classList.toggle('night-mode');
+    
+        // Check if night mode is enabled
+        if (document.body.classList.contains('night-mode')) {
+          // If night mode is enabled, store 'enabled' in local storage
+          localStorage.setItem('nightMode', 'enabled');
+        } else {
+          // If night mode is disabled, store 'disabled' in local storage
+          localStorage.setItem('nightMode', 'disabled');
+        }
+      }
+    
+      // Add event listener to toggle button
+      document.getElementById('night-mode-toggle').addEventListener('click', toggleNightMode);
+    
+      // Check the value of 'nightMode' in local storage when the page loads
+      if (localStorage.getItem('nightMode') === 'enabled') {
+        // If 'nightMode' is 'enabled', apply the night mode styles to the page
+        document.body.classList.add('night-mode');
+      }
+    </script>
+    
+    <!-- CSS styles for night mode -->
+    <style>
+      .night-mode {
+        background-color: black;
+        color: white;
+      }
+    </style>
+    
+
+    <div class="image-container">
+        <img src="Assets/image1.jpg" alt="Placeholder 1">
+        <p>Welcome to Gloves Inc., your one-stop shop for high-quality cycling and motorcycle gloves. At Gloves Inc., we understand the importance of protecting your hands while on the road or trail. That's why we offer a wide range of gloves specifically designed for cycling and motorcycle enthusiasts. Our gloves are made with the highest quality materials and are built to last, so you can focus on your ride without worrying about your gear. In addition to our durable construction, our gloves also feature advanced technologies such as gel padding and ventilation to keep your hands comfortable and sweat-free. Whether you're a casual rider or a hardcore enthusiast, we have a pair of gloves that will suit your needs. Thank you for choosing Gloves Inc. for all of your cycling and motorcycle glove needs.</p>
+
+        <img src="Assets/image2.jpg" alt="Placeholder 2">
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial-text">"I recently purchased a pair of cycling gloves from Gloves Inc. and I couldn't be happier with my purchase. Not only are these gloves extremely comfortable and well-ventilated, but they also provide excellent protection for my hands. I've been using them on long rides and my hands have never felt better. The gel padding in the palms helps to absorb shock and reduce hand fatigue, while the adjustable wrist closures keep the gloves securely in place. Overall, I am extremely satisfied with the quality and performance of these gloves and will definitely be purchasing more in the future. Thank you, Gloves Inc., for creating such a fantastic product!"</p>
+        <p class="testimonial-author">- Shaka Nathi</p>
+      </div>
+
+      <div class="image-customer">
+        <img src="Assets/image3.png" alt="Placeholder 1">
+      </div>
+
+      <div class="testimonial-2">
+        <p class="testimonial-text">"From the moment I placed my order online, the customer service team at Gloves Inc. went above and beyond to ensure my satisfaction. They were quick to answer any questions I had and even offered suggestions based on my specific needs.
+
+          Upon receiving my gloves, I was immediately impressed by the high quality of the materials and craftsmanship. The gloves fit like a glove (pun intended) and provide excellent protection while riding. Not only do they look great, but they also have a number of features that make them extremely practical for any rider. The touchscreen compatibility is a game changer and the ventilation system keeps my hands cool and comfortable even on the hottest days.
+          
+          Overall, I am extremely satisfied with my purchase from Gloves Inc. and I highly recommend them to any rider looking for top-notch protection and style. The team at Gloves Inc. truly cares about their customers and it shows in the attention to detail and exceptional service they provide. Thank you, Gloves Inc. for helping me find the perfect gloves for my rides!"</p>
+        <p class="testimonial-author">- Odion Dalmar</p>
+      </div>
+
+      <div class="image-customer-2">
+        <img src="Assets/image4.png" alt="Placeholder 1">
+      </div>
+      
+  </main>
+
+  <div class="footer">
+    <p>Copyright 2022 Joe Harris, JoePeter11@icloud.com</p>
+  </div>
+
+</body>
+</html>

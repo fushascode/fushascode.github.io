@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gloves For You INC</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div style="text-align:center;">
+    <a href="index.html">
+      <img src="Assets/weblogo.jpg" width="75" height="75">
+    </a>
+  </div>
+  <h1>Gloves Inc.</a></h1>
+  <div class="nav-wrapper">
+    <nav>
+      <ul>
+        <li><a href="product-1.html">Motorcycle Gloves</a></li>
+        <li><a href="product-2.html">Cycling Gloves</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <main>
+    <button id="night-mode-toggle">
+        <img src="Assets/moon.png" width="23" height="23">
+    </button>
+
+    <script>
+      // JavaScript function to toggle night mode
+      function toggleNightMode() {
+        document.body.classList.toggle('night-mode');
+    
+        // Check if night mode is enabled
+        if (document.body.classList.contains('night-mode')) {
+          // If night mode is enabled, store 'enabled' in local storage
+          localStorage.setItem('nightMode', 'enabled');
+        } else {
+          // If night mode is disabled, store 'disabled' in local storage
+          localStorage.setItem('nightMode', 'disabled');
+        }
+      }
+    
+      // Add event listener to toggle button
+      document.getElementById('night-mode-toggle').addEventListener('click', toggleNightMode);
+    
+      // Check the value of 'nightMode' in local storage when the page loads
+      if (localStorage.getItem('nightMode') === 'enabled') {
+        // If 'nightMode' is 'enabled', apply the night mode styles to the page
+        document.body.classList.add('night-mode');
+      }
+    </script>
+    
+    <!-- CSS styles for night mode -->
+    <style>
+      .night-mode {
+        background-color: black;
+        color: white;
+      }
+    </style>
+
+<button onclick="increaseSize()">+</button>
+<button onclick="decreaseSize()">-</button>
+
+<script>
+  function increaseSize() {
+    var elements = document.getElementsByTagName("*");
+    for (var i = 0; i < elements.length; i++) {
+      var currentSize = window.getComputedStyle(elements[i], null).getPropertyValue("font-size");
+      var currentSizeInt = parseInt(currentSize);
+      elements[i].style.fontSize = (currentSizeInt + 2) + "px";
+    }
+    localStorage.setItem("fontSize", elements[0].style.fontSize);
+  }
+
+  function decreaseSize() {
+    var elements = document.getElementsByTagName("*");
+    for (var i = 0; i < elements.length; i++) {
+      var currentSize = window.getComputedStyle(elements[i], null).getPropertyValue("font-size");
+      var currentSizeInt = parseInt(currentSize);
+      elements[i].style.fontSize = (currentSizeInt - 2) + "px";
+    }
+    localStorage.setItem("fontSize", elements[0].style.fontSize);
+  }
+
+  window.onload = function() {
+    var storedSize = localStorage.getItem("fontSize");
+    if (storedSize) {
+      var elements = document.getElementsByTagName("*");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.fontSize = storedSize;
+      }
+    }
+  }
+</script>
+
+
+
+<form action="/register" method="post">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
+    <label for="password_confirmation">Confirm Password:</label><br>
+    <input type="password" id="password_confirmation" name="password_confirmation" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br><br>
+    <input type="submit" value="Submit">
+  </form> 
+
+  </main>
+
+  <div class="footer">
+  <p>Copyright 2022 Joe Harris, JoePeter11@icloud.com</p>
+</div>
+
+</body>
+</html>
